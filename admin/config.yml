@@ -3,7 +3,7 @@
 backend:
   name: github
   repo: FutureGadgetServices/JekyllBeautifulWithCMS
-  base_url: https://futuregadgetservices.github.io/JekyllBeautifulWithCMS/
+  base_url: https://sveltia-cms-auth.himynameisfil.workers.dev
 
 media_folder: /static/media
 public_folder: /media
