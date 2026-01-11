@@ -1,0 +1,158 @@
+﻿# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+
+backend:
+  name: github
+  repo: FutureGadgetServices/JekyllBeautifulWithCMS
+
+media_folder: /static/media
+public_folder: /media
+
+collections:
+  - name: category1_posts
+    label: "Category 1 Posts"
+    folder: _posts/category1
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Subtitle", name: "subtitle", widget: "string", required: false }
+      - { label: "Categories", name: "categories", widget: "hidden", default: ["category1"] }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: category2_posts
+    label: "Category 2 Posts"
+    folder: _posts/category2
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Subtitle", name: "subtitle", widget: "string", required: false }
+      - { label: "Categories", name: "categories", widget: "hidden", default: ["category2"] }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: category3_posts
+    label: "Category 3 Posts"
+    folder: _posts/category3
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    filter: {field: "categories", value: "category3"}
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Subtitle", name: "subtitle", widget: "string", required: false }
+      - { label: "Categories", name: "categories", widget: "hidden", default: ["category3"] }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: subcategory1_posts
+    label: "Category 3 - Subcategory 1 Posts"
+    folder: _posts/category3/subcategory1
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Subtitle", name: "subtitle", widget: "string", required: false }
+      - { label: "Categories", name: "categories", widget: "hidden", default: ["category3", "subcategory1"] }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: subcategory2_posts
+    label: "Category 3 - Subcategory 2 Posts"
+    folder: _posts/category3/subcategory2
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Subtitle", name: "subtitle", widget: "string", required: false }
+      - { label: "Categories", name: "categories", widget: "hidden", default: ["category3", "subcategory2"] }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: guides_posts
+    label: "Guides Posts"
+    folder: _posts/guides
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Subtitle", name: "subtitle", widget: "string", required: false }
+      - { label: "Categories", name: "categories", widget: "hidden", default: ["guides"] }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: pages
+    label: Pages
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "_pages/home.html"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
+          - { label: "Permalink", name: "permalink", widget: "hidden", default: "/" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Internal Page 1"
+        name: "page1"
+        file: "_pages/internal/page1.md"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
+          - { label: "Permalink", name: "permalink", widget: "hidden", default: "/page1/" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Internal Page 2"
+        name: "page2"
+        file: "_pages/internal/page2.md"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
+          - { label: "Permalink", name: "permalink", widget: "hidden", default: "/page2/" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Internal Page 3"
+        name: "page3"
+        file: "_pages/internal/page3.md"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
+          - { label: "Permalink", name: "permalink", widget: "hidden", default: "/page3/" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Category 1 Page"
+        name: "category1"
+        file: "_pages/category/category1.html"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
+          - { label: "Permalink", name: "permalink", widget: "hidden", default: "/category1/" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Category 2 Page"
+        name: "category2"
+        file: "_pages/category/category2.html"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
+          - { label: "Permalink", name: "permalink", widget: "hidden", default: "/category2/" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Category 3 Page"
+        name: "category3"
+        file: "_pages/category/category3.html"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
+          - { label: "Permalink", name: "permalink", widget: "hidden", default: "/category3/" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Guides Page"
+        name: "guides"
+        file: "_pages/guides.html"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
+          - { label: "Permalink", name: "permalink", widget: "hidden", default: "/guides/" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
